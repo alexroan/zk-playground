@@ -1,0 +1,19 @@
+{
+  "name": "circom-hardhat-integration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alex Roan (@alexroan)",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "hardhat": "^2.13.1",
+    "hardhat-circom": "^3.3.2"
+  },
+  "scripts": {
+    "circom:dev": "hardhat circom --deterministic --debug --verbose",
+    "circom:prod": "hardhat circom --verbose",
+    "test": "hardhat test"
+  }
+}
