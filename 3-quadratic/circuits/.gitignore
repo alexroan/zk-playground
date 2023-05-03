@@ -1,0 +1,6 @@
+# Ignore the output from circom because we want people to build these
+# Users can remove these lines and commit the artifacts
+*.r1cs
+*.vkey.json
+*.wasm
+*.zkey
