@@ -1,5 +1,5 @@
 {
-  "name": "circom-quadratic-proof",
+  "name": "circom-quadratic",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Alex Roan (@alexroan)",
@@ -12,19 +12,17 @@
     "@nomiclabs/hardhat-etherscan": "^3.0.0",
     "@typechain/ethers-v5": "^10.1.0",
     "@typechain/hardhat": "^6.1.2",
-    "@types/chai": "^4.3.5",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.16.3",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
     "chai": "^4.3.7",
-    "circom_tester": "^0.0.19",
     "circomlib": "^2.0.5",
     "circomlibjs": "^0.1.7",
     "hardhat": "^2.14.0",
     "hardhat-circom": "^3.3.2",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.1",
-    "ts-node": "^10.9.1",
+    "ts-node": ">=8.0.0",
     "typechain": "^8.1.0",
-    "typescript": "^5.0.4"
+    "typescript": ">=4.5.0"
   }
 }
