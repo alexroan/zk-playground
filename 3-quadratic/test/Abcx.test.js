@@ -3,16 +3,23 @@ const {ethers} = require("hardhat");
 const { assert } = require("chai");
 const snarkjs = require("snarkjs");
 
-describe("quadratic circuit", () => {
+describe("abcx circuit", () => {
   let circuit;
 
+  // 2x^2 + 3x -5 = 0
+  // or
+  // 2x^2 + 3x = 5
   const sampleInput = {
-    x: "2",
+    a: "2",
+    b: "3",
+    c: "0",
+    right: "5",
+    x: "1"
   };
   const sanityCheck = true;
 
   before(async () => {
-    circuit = await hre.circuitTest.setup("quadratic");
+    circuit = await hre.circuitTest.setup("abcx");
   });
 
   describe('circuit tests', () => {
@@ -26,14 +33,11 @@ describe("quadratic circuit", () => {
         sampleInput,
         sanityCheck
       );
+      assert.propertyVal(witness, "main.a", sampleInput.a);
+      assert.propertyVal(witness, "main.b", sampleInput.b);
+      assert.propertyVal(witness, "main.c", sampleInput.c);
+      assert.propertyVal(witness, "main.right", sampleInput.right);
       assert.propertyVal(witness, "main.x", sampleInput.x);
-      assert.propertyVal(witness, "main.right", "11");
-    });
-  
-    it("has the correct output", async () => {
-      const expected = { right: 11 };
-      const witness = await circuit.calculateWitness(sampleInput, sanityCheck);
-      await circuit.assertOut(witness, expected);
     });
   })
 
@@ -42,9 +46,9 @@ describe("quadratic circuit", () => {
     let jsonCalldata;
 
     beforeEach(async () => {
-      const VerifierFactory  = await ethers.getContractFactory("contracts/QuadraticVerifier.sol:Verifier");
+      const VerifierFactory  = await ethers.getContractFactory("contracts/AbcxVerifier.sol:Verifier");
       verifier = await VerifierFactory.deploy();
-      const {proof, publicSignals} = await snarkjs.groth16.fullProve(sampleInput, "circuits/quadratic.wasm", "circuits/quadratic.zkey");
+      const {proof, publicSignals} = await snarkjs.groth16.fullProve(sampleInput, "circuits/abcx.wasm", "circuits/abcx.zkey");
       const rawcalldata = await snarkjs.groth16.exportSolidityCallData(proof, publicSignals);
       jsonCalldata = JSON.parse("["+rawcalldata+"]")
     })
@@ -54,7 +58,7 @@ describe("quadratic circuit", () => {
     })
 
     it("fails to prove if the public signals are wrong", async () => {
-      assert.isFalse(await verifier.verifyProof(jsonCalldata[0], jsonCalldata[1], jsonCalldata[2], [12]))
+      assert.isFalse(await verifier.verifyProof(jsonCalldata[0], jsonCalldata[1], jsonCalldata[2], [12,1,2,3]))
     })
   })
 });

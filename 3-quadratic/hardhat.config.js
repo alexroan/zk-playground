@@ -21,6 +21,9 @@ module.exports = {
         name: "quadratic",
         // No protocol, so it defaults to groth16
       },
+      {
+        name: "abcx",
+      }
       //   {
       //     name: "simple-polynomial",
       //     // Generate PLONK

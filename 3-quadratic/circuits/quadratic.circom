@@ -8,9 +8,6 @@ function sqr(x) {
 // Answer: x = 2
 
 template Quadratic () {
-    // signal input a;
-    // signal input b;
-    // signal input c;
     signal input x;
     signal output right;
 
