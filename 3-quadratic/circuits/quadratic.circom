@@ -16,7 +16,7 @@ template Quadratic () {
     var third = 5;
     var sum = first + second + third;
     right <== sum;
-    assert(right == 11);
+    right === 11;
 }
 
 component main = Quadratic();
