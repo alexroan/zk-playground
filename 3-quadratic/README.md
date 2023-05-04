@@ -1,13 +1,36 @@
-# Sample Hardhat Project
+# Quadratic Circuit Examples
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+There are two Quadratic circuit examples in `circuits/`:
 
-Try running some of the following tasks:
+* `quadratic.circom`
+  * Proves that x is known in: `x^2 + x + 5 = 11`
+* `abcx.circom`
+  * Proves that x is known in: `ax^2 + bx + c = right`
+  * a, b, c, and right are public inputs
+  * x is private input
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+## Installation
+
+```
+yarn
+```
+
+## Compilation
+
+```
+yarn circom:dev
+```
+
+## Test
+
+```
+yarn test
+```
+
+## Production Compilation
+
+Uses `Date.now()` as entropy in the trusted setup.
+
+```
+yarn circom:prod
 ```

@@ -18,3 +18,7 @@ This is a raw manual version of the following steps:
 This is a simplified version of the many manual steps above, integrated into a hardhat project, using the same circuit.
 
 It has a hardhat test file that tests the constraints of the circuit.
+
+## [3. Quadratic Equation Proofs](./3-quadratic/)
+
+A hardhat project with quadratic equation provers. Prove that you know the root of an equation without revealing it.
