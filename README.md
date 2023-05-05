@@ -36,6 +36,7 @@ Then, using a package called `snarkjs`, we can use this circuit to generate a So
 
 Example flow: Generate the proof off-chain, and submit on-chain to the verifier. If verified, the contract can take action/open some doors/mint some tokens/etc.
 
+# Where do I start?
 
 ## [1. Multiplier](./1-multiplier/)
 
@@ -47,6 +48,10 @@ This is a raw manual version of the following steps:
 4. Verifying the proof locally
 5. Generating a smart contract verifier
 6. Generating raw call to the verifier contract to copy-paste into a Remix call
+
+This is pretty long-winded and you can get a bit lost in the low-level weeds here, but it does a good job of going through what's required at a low-level to work with SNARKs.
+
+If you want to get straight into learning how to engineer circuits in a repo using hardhat, check out number 2...
 
 ## [2. Hardhat Integration](./2-hardhat-integration/)
 
