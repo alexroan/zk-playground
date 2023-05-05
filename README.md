@@ -34,7 +34,7 @@ We write circuits in this repo in a language called `circom`.
 
 Then, using a package called `snarkjs`, we can use this circuit to generate a Solidity smart contract verifier specifically for that circuit!
 
-Generate the proof off-chain, submit on-chain to the verifier, and if verified, take some action/open some door/mint some tokens/etc.
+Example flow: Generate the proof off-chain, and submit on-chain to the verifier. If verified, the contract can take action/open some doors/mint some tokens/etc.
 
 
 ## [1. Multiplier](./1-multiplier/)
