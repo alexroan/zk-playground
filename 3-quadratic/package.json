@@ -20,8 +20,6 @@
     "@types/chai": "^4.2.0",
     "@types/mocha": ">=9.1.0",
     "chai": "^4.3.7",
-    "circomlib": "^2.0.5",
-    "circomlibjs": "^0.1.7",
     "hardhat": "^2.14.0",
     "hardhat-circom": "^3.3.2",
     "hardhat-gas-reporter": "^1.0.8",
