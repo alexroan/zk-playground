@@ -1,6 +1,6 @@
 const hre = require("hardhat");
-const {ethers} = require("hardhat");
-const { assert } = require("chai");
+const { ethers } = require("hardhat");
+const { assert, expect } = require("chai");
 const snarkjs = require("snarkjs");
 
 describe("quadratic circuit", () => {
@@ -34,6 +34,10 @@ describe("quadratic circuit", () => {
       const expected = { right: 11 };
       const witness = await circuit.calculateWitness(sampleInput, sanityCheck);
       await circuit.assertOut(witness, expected);
+    });
+
+    it("fails if the input is wrong", async () => {
+      await expect(circuit.calculateWitness({x: 3}, sanityCheck)).to.be.rejectedWith(Error);
     });
   })
 
