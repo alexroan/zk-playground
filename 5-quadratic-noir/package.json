@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "hardhat": "^2.15.0"
+    "hardhat": "^2.15.0",
+    "hardhat-noir": "^0.2.1"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
