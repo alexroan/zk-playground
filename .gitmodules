@@ -1,0 +1,3 @@
+[submodule "5-quadratic-noir/lib/forge-std"]
+	path = 5-quadratic-noir/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

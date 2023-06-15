@@ -9,3 +9,7 @@ typechain-types
 cache
 artifacts
 
+# Foundry
+out
+proofs
+target
