@@ -1,13 +1,16 @@
-# Sample Hardhat Project
+# Quadtatic Equation Proving with Noir Language
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Prerequisites
 
-Try running some of the following tasks:
+1. [Nargo](https://noir-lang.org/getting_started/nargo_installation)
+2. [Foundry](https://book.getfoundry.sh/getting-started/installation)
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+## Usage
+
+```bash
+forge build
+nargo compile main
+nargo check
+nargo prove main
+forge test
 ```
