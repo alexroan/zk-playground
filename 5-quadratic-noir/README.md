@@ -1,4 +1,4 @@
-# Quadtatic Equation Proving with Noir Language
+# Quadratic Equation Proving with Noir Language
 
 ## Prerequisites
 
