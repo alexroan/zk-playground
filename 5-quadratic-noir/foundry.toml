@@ -4,6 +4,5 @@ out = "out"
 libs = ["lib"]
 
 fs_permissions = [{ access = "read", path = "./proofs"}]
-# allowed_paths = ["./proofs"]
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
